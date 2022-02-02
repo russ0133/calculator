@@ -1,33 +1,42 @@
+$clr-main: #393e41;
+$clr-background: #f6f7eb;
+
 * {
+  background-color: $clr-background;
   padding: 0px 0px;
   margin: 0px 0px;
   box-sizing: border-box;
 }
 header {
-  background-color: gray;
+  background-color: $clr-background;
+
   padding: 1em 0;
 }
 .mainContainer {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: flex;
-  border-radius: 12px;
+  border-radius: 5px;
   margin: 2em 35%;
   padding: 4em 1em;
   align-items: center;
   justify-content: center;
-  background-color: gray;
+  background-color: $clr-main;
   flex-direction: column;
   flex-wrap: wrap;
 
   .row {
     margin: 0.1em;
+    flex: 1;
   }
 
   #calcScreen {
+    border-radius: 5px;
     margin-bottom: 1em;
-    background-color: white;
+    padding: 2em;
+    background-color: $clr-background;
     width: 100%;
     padding: 1em;
-    border: 2px solid black;
+    border: 1px solid grey;
   }
 }
 
@@ -40,6 +49,7 @@ header {
 
 /* CSS */
 button {
+  margin: 5px;
   align-items: center;
   appearance: none;
   background-color: #fcfcfd;
