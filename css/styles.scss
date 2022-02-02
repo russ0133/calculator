@@ -8,16 +8,17 @@ $clr-background: #f6f7eb;
   box-sizing: border-box;
 }
 header {
-  background-color: $clr-background;
+  background-color: $clr-main;
 
   padding: 1em 0;
 }
 .mainContainer {
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
   display: flex;
-  border-radius: 5px;
+  border-radius: 50px;
   margin: 2em 35%;
-  padding: 4em 1em;
+  padding: 4.5em 0em;
   align-items: center;
   justify-content: center;
   background-color: $clr-main;
@@ -28,13 +29,18 @@ header {
     margin: 0.1em;
     flex: 1;
   }
-
+  #calcTitle {
+    margin-bottom: 1em;
+    background-color: $clr-main;
+    color: $clr-background;
+    font-size: 24px;
+  }
   #calcScreen {
     border-radius: 5px;
     margin-bottom: 1em;
     padding: 2em;
     background-color: $clr-background;
-    width: 100%;
+    width: 75%;
     padding: 1em;
     border: 1px solid grey;
   }
@@ -48,6 +54,11 @@ header {
 }
 
 /* CSS */
+.row {
+  display: flex;
+  width: 50%;
+}
+
 button {
   margin: 5px;
   align-items: center;

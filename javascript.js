@@ -1,4 +1,4 @@
-// !  LEARN CLASSES AND CREATE CALCULATOR CLASS?
+// TODO:  LEARN CLASSES AND CREATE CALCULATOR CLASS?
 
 const op = {
   add: 1,
@@ -15,6 +15,7 @@ const resultButton = document.querySelector("#result");
 const subtractButton = document.querySelector("#minus");
 const divideButton = document.querySelector("#divide");
 const multiplyButton = document.querySelector("#multiply");
+const clearButton = document.querySelector("#clear");
 
 let lastOperationContent = [];
 let currentOperationContent = [];
@@ -38,6 +39,8 @@ function operate(operation, a, b) {
   return;
 }
 
+// ? BUTTON LISTENERS
+// ? -> Divide Button
 divideButton.addEventListener("click", function (e) {
   if (opid != undefined) {
     operate(opid, 0, 0);
@@ -48,6 +51,8 @@ divideButton.addEventListener("click", function (e) {
   currentOperationContent = currentOperationContent + " / ";
   updateScreen();
 });
+
+// ? -> Multiply Button
 multiplyButton.addEventListener("click", function (e) {
   if (opid != undefined) {
     operate(opid, 0, 0);
@@ -58,6 +63,8 @@ multiplyButton.addEventListener("click", function (e) {
   currentOperationContent = currentOperationContent + " x ";
   updateScreen();
 });
+
+// ? -> Subtract Button
 subtractButton.addEventListener("click", function (e) {
   if (opid != undefined) {
     operate(opid, 0, 0);
@@ -68,6 +75,8 @@ subtractButton.addEventListener("click", function (e) {
   currentOperationContent = currentOperationContent + " - ";
   updateScreen();
 });
+
+// ? -> Sum Button
 sumButton.addEventListener("click", () => {
   if (opid != undefined) {
     operate(opid, 0, 0);
@@ -79,10 +88,12 @@ sumButton.addEventListener("click", () => {
   updateScreen();
 });
 
+// ? -> Result Button
 resultButton.addEventListener("click", function (e) {
   operate(opid);
 });
 
+// ? -> 0-9 Buttons
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
     lastOperationContent = currentOperationContent;
@@ -91,15 +102,26 @@ numberButtons.forEach((button) => {
   });
 });
 
-// ? CALCULATOR CODE
-
+// ? -> Clear Button
+clearButton.addEventListener("click", function (e) {
+  clearScreen();
+});
+// ? CALCULATOR FUNCTIONS
 function updateScreen() {
   calcScreen.textContent = currentOperationContent;
 }
-// ? ARITHMETIC OPERATIONS FROM NOW ON
+
+function clearScreen() {
+  lastOperationContent = [];
+  currentOperationContent = [];
+  opid = undefined;
+  updateScreen();
+}
+
+// ? ARITHMETIC OPERATIONS
+let splitSum;
+let result;
 function add() {
-  let splitSum;
-  let result;
   splitSum = currentOperationContent.split(" + ");
   result = parseInt(splitSum[0]) + parseInt(splitSum[1]);
   currentOperationContent = result + "";
@@ -108,8 +130,6 @@ function add() {
 }
 
 function subtract() {
-  let splitSum;
-  let result;
   splitSum = currentOperationContent.split(" - ");
   result = parseInt(splitSum[0]) - parseInt(splitSum[1]);
   currentOperationContent = result + "";
@@ -118,8 +138,6 @@ function subtract() {
 }
 
 function multiply() {
-  let splitSum;
-  let result;
   splitSum = currentOperationContent.split(" x ");
   result = parseInt(splitSum[0]) * parseInt(splitSum[1]);
   currentOperationContent = result + "";
