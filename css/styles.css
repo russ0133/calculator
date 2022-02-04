@@ -1,5 +1,6 @@
 * {
   background-color: #f6f7eb;
+  font-family: "JetBrains Mono", monospace;
   padding: 0px 0px;
   margin: 0px 0px;
   -webkit-box-sizing: border-box;
@@ -17,7 +18,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 50px;
+  border-radius: 12px;
   margin: 2em 35%;
   padding: 4.5em 0em;
   -webkit-box-align: center;

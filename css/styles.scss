@@ -3,6 +3,7 @@ $clr-background: #f6f7eb;
 
 * {
   background-color: $clr-background;
+  font-family: "JetBrains Mono", monospace;
   padding: 0px 0px;
   margin: 0px 0px;
   box-sizing: border-box;
@@ -16,7 +17,7 @@ header {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   display: flex;
-  border-radius: 50px;
+  border-radius: 12px;
   margin: 2em 35%;
   padding: 4.5em 0em;
   align-items: center;
